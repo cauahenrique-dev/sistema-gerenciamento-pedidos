@@ -9,14 +9,14 @@ public class PrincipalTabela {
 
         System.out.println("=== TESTE DA TABELA CLIENTE ===");
 
-        // === CRIAR TABELA ===
+        
         if (ClienteDAO.criarTabelaCliente()) {
             System.out.println("✅ Tabela cliente criada com sucesso!");
         } else {
             System.out.println("❌ Erro ao criar a tabela cliente.");
         }
 
-        // === INSERIR CLIENTES ===
+       
         System.out.println("\n--- INSERIR CLIENTES ---");
         Cliente c1 = new Cliente("Pedro", "pedro@gmail.com", "31977777777");
         Cliente c2 = new Cliente("Eduardo", "eduardo@gmail.com", "3188888888");
@@ -31,7 +31,7 @@ public class PrincipalTabela {
         else
             System.out.println("❌ Erro ao inserir cliente 2");
 
-        // === ALTERAR CLIENTES ===
+        
         System.out.println("\n--- ALTERAR CLIENTES ---");
         c1.setFone("31999977777");
         if (ClienteDAO.alterarCliente(c1))
@@ -45,7 +45,7 @@ public class PrincipalTabela {
         else
             System.out.println("❌ Erro ao alterar cliente 2");
 
-        // === CONSULTAR CLIENTE ===
+        
         System.out.println("\n--- CONSULTAR CLIENTE 1 ---");
         Cliente clienteConsultado = ClienteDAO.consultarCliente(c1.getCodCliente());
         if (clienteConsultado != null)
@@ -53,7 +53,7 @@ public class PrincipalTabela {
         else
             System.out.println("❌ Cliente não encontrado.");
 
-        // === LISTAR TODOS ===
+        
         System.out.println("\n--- LISTAR TODOS OS CLIENTES ---");
         ClienteDAO.consultarClientes().forEach(System.out::println);
 
